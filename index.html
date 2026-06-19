@@ -4,89 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A-House — архитектурная система современных энергоэффективных домов." />
-    <title>A-House — дом как архитектурная система</title>
+    <title>A-House — архитектурная система</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23161813'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='42' fill='%23eeeae1' font-family='serif'%3EA%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
+
     <header class="header" id="top">
-      <a class="brand" href="#top" aria-label="A-House, на главную">
-        <span class="brand-mark">A</span>
-        <span>A—HOUSE</span>
+      <a class="brand" href="#top" aria-label="A-House">
+        <span class="brand-mark">A</span><span>A—HOUSE</span>
       </a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a href="#projects">Проекты</a>
-        <a href="#system">Система</a>
-        <a href="#principles">Принципы</a>
-        <a href="#process">Процесс</a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="#projects" data-i18n="nav.projects">Проекты</a>
+        <a href="#system" data-i18n="nav.system">Система</a>
+        <a href="#included" data-i18n="nav.included">Комплектация</a>
+        <a href="#process" data-i18n="nav.process">Процесс</a>
       </nav>
-      <button class="header-cta js-open-contact">Обсудить проект <span>↗</span></button>
-      <button class="menu-button" aria-label="Открыть меню" aria-expanded="false">
-        <span></span><span></span>
-      </button>
+      <div class="header-tools">
+        <div class="language-switcher" aria-label="Language">
+          <button class="active" data-lang="ru">RU</button><button data-lang="en">EN</button><button data-lang="de">DE</button>
+        </div>
+        <button class="header-cta js-open-contact"><span data-i18n="nav.contact">Обсудить проект</span> ↗</button>
+      </div>
+      <button class="menu-button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </header>
 
     <main>
       <section class="hero">
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow"><span>Архитектурная система</span><span>01 / 06</span></p>
-          <h1>Дом, который<br />умеет <em>меняться.</em></h1>
-          <p class="hero-lead">A-House объединяет выразительную архитектуру, автономную инженерию и свободу планировки. Выберите готовую конфигурацию — или создайте свою.</p>
+          <p class="eyebrow"><span data-i18n="hero.eyebrow">Архитектурная система нового поколения</span><span>01 / 08</span></p>
+          <h1 data-i18n-html="hero.title">Дом — это не объект.<br />Это <em>ваш сценарий.</em></h1>
+          <p class="hero-lead" data-i18n="hero.lead">A-House соединяет архитектуру, автономную энергетику и свободную планировку в одной точной системе. Вы выбираете образ жизни — мы собираем дом вокруг него.</p>
           <div class="hero-actions">
-            <a class="button button-dark" href="#projects">Смотреть проекты <span>↓</span></a>
-            <button class="text-link js-open-contact">Рассчитать свой дом <span>↗</span></button>
+            <a class="button button-dark magnetic" href="#projects"><span data-i18n="hero.explore">Исследовать проекты</span><span>↓</span></a>
+            <button class="text-link js-open-contact"><span data-i18n="hero.calculate">Создать свой A-House</span><span>↗</span></button>
+          </div>
+          <div class="hero-facts">
+            <div><strong>43</strong><span data-i18n-html="hero.fact1">проверенных<br />узла системы</span></div>
+            <div><strong>62</strong><span data-i18n-html="hero.fact2">кВт потенциал<br />солнечной станции</span></div>
+            <div><strong>∞</strong><span data-i18n-html="hero.fact3">сценариев<br />планировки</span></div>
           </div>
         </div>
-        <div class="hero-visual">
-          <img src="assets/a-house-hero.webp" alt="Архитектурный проект A-House с солнечной электростанцией на крыше" />
-          <div class="hero-caption"><span>Концепт A.01</span><span>Энергоэффективность / автономность</span></div>
-          <div class="solar-badge"><b>62</b><span>кВт<br />потенциал СЭС</span></div>
+        <div class="hero-gallery">
+          <figure class="hero-main-image parallax-media">
+            <img src="images/a-house-family.webp" alt="A-House Family" />
+            <figcaption><span>A.02 / Family</span><span data-i18n="hero.caption">Архитектура для долгой жизни</span></figcaption>
+          </figure>
+          <figure class="hero-small-image parallax-media">
+            <img src="images/a-house-courtyard.webp" alt="A-House Courtyard" />
+            <figcaption>A.03 / Courtyard</figcaption>
+          </figure>
+          <div class="hero-seal"><span>A—HOUSE</span><b>2026</b><small data-i18n-html="hero.seal">DESIGNED<br />AROUND YOU</small></div>
         </div>
-        <div class="hero-index" aria-hidden="true">A—01</div>
+        <div class="vertical-note" data-i18n="hero.vertical">MODULAR / ADAPTABLE / AUTONOMOUS</div>
       </section>
 
-      <section class="manifesto" id="principles">
-        <p class="section-kicker">Манифест A-House</p>
-        <div class="manifesto-grid">
-          <h2>Не квадратные метры.<br /><em>Качество жизни.</em></h2>
+      <div class="ticker" aria-hidden="true">
+        <div><span data-i18n="ticker.energy">ЭНЕРГОНЕЗАВИСИМОСТЬ</span><i>✦</i><span data-i18n="ticker.plan">СВОБОДНАЯ ПЛАНИРОВКА</span><i>✦</i><span data-i18n="ticker.service">ОБСЛУЖИВАЕМАЯ ИНЖЕНЕРИЯ</span><i>✦</i><span data-i18n="ticker.speed">ТОЧНАЯ СБОРКА</span><i>✦</i></div>
+        <div><span data-i18n="ticker.energy">ЭНЕРГОНЕЗАВИСИМОСТЬ</span><i>✦</i><span data-i18n="ticker.plan">СВОБОДНАЯ ПЛАНИРОВКА</span><i>✦</i><span data-i18n="ticker.service">ОБСЛУЖИВАЕМАЯ ИНЖЕНЕРИЯ</span><i>✦</i><span data-i18n="ticker.speed">ТОЧНАЯ СБОРКА</span><i>✦</i></div>
+      </div>
+
+      <section class="manifesto">
+        <p class="section-kicker" data-i18n="manifesto.kicker">Идея A-House</p>
+        <div class="manifesto-grid reveal">
+          <h2 data-i18n-html="manifesto.title">Архитектура,<br />которая <em>остаётся актуальной.</em></h2>
           <div class="manifesto-text">
-            <p>A-House проектируется как единый организм. Архитектура, климат, энергия и обслуживание не спорят друг с другом — они работают вместе.</p>
-            <p>Повторяемые модули дают скорость и точность, а свободная внутренняя структура оставляет пространство для вашей жизни — сегодняшней и будущей.</p>
+            <p data-i18n="manifesto.p1">Дом проектируется не на один этап жизни. Сегодня — открытое пространство для двоих, завтра — приватные комнаты, кабинет или отдельная зона для родителей.</p>
+            <p data-i18n="manifesto.p2">Модульные перегородки, доступная инженерия и ремонтопригодный фасад позволяют дому меняться без тяжёлой реконструкции.</p>
+            <a href="#system" class="inline-arrow"><span data-i18n="manifesto.link">Как устроена система</span> ↘</a>
           </div>
-        </div>
-        <div class="metric-row">
-          <article><strong>43</strong><span>проработанных<br />конструктивных решения</span></article>
-          <article><strong>1220</strong><span>мм — базовый модуль<br />точной сборки</span></article>
-          <article><strong>100%</strong><span>инженерии доступно<br />для обслуживания</span></article>
-          <article><strong>∞</strong><span>сценариев<br />планировки</span></article>
         </div>
       </section>
 
       <section class="projects" id="projects">
-        <div class="section-head">
-          <div><p class="section-kicker light">Линейка проектов</p><h2>Один принцип.<br /><em>Разные масштабы.</em></h2></div>
-          <p>Каждая конфигурация — отправная точка. Площадь, фасад, набор помещений и инженерный сценарий адаптируются под участок и привычки семьи.</p>
+        <div class="section-head reveal">
+          <div><p class="section-kicker light" data-i18n="projects.kicker">Коллекция домов</p><h2 data-i18n-html="projects.title">Четыре характера.<br /><em>Одна философия.</em></h2></div>
+          <p data-i18n="projects.intro">Не каталог типовых коробок, а четыре продуманные точки старта. Каждую можно адаптировать к климату, рельефу, масштабу семьи и бюджету.</p>
         </div>
-        <div class="project-stage">
+
+        <div class="project-stage reveal">
           <div class="project-image-wrap">
-            <img src="assets/a-house-hero.webp" alt="Проект A-House" />
-            <div class="project-tag">Проектная серия / 2026</div>
+            <img id="project-image" src="images/a-house-hero.webp" alt="A-House Essential" />
+            <div class="project-tag" data-i18n="projects.tag">Архитектурная серия / 2026</div>
+            <div class="project-image-index"><span id="project-image-num">01</span> / 04</div>
+            <button class="project-arrow project-prev" aria-label="Previous project">←</button>
+            <button class="project-arrow project-next" aria-label="Next project">→</button>
           </div>
           <div class="project-info">
-            <div class="project-counter"><span id="project-num">01</span><span>/ 04</span></div>
             <p class="project-type" id="project-type">A.01 / Essential</p>
             <h3 id="project-title">Точный дом<br />для нового ритма.</h3>
-            <p id="project-description">Лаконичная базовая конфигурация с панорамным жилым контуром и полной инженерной автономией.</p>
+            <p id="project-description">Компактная конфигурация с панорамным жилым контуром, свободным интерьером и полной инженерной автономией.</p>
             <dl>
-              <div><dt>Формат</dt><dd id="project-format">Компактный</dd></div>
-              <div><dt>Этажность</dt><dd id="project-floors">1–2 этажа</dd></div>
-              <div><dt>Планировка</dt><dd id="project-plan">Свободная</dd></div>
+              <div><dt data-i18n="projects.format">Формат</dt><dd id="project-format">Компактный</dd></div>
+              <div><dt data-i18n="projects.floors">Этажность</dt><dd id="project-floors">1–2 этажа</dd></div>
+              <div><dt data-i18n="projects.plan">Планировка</dt><dd id="project-plan">Свободная</dd></div>
+              <div><dt data-i18n="projects.site">Участок</dt><dd id="project-site">От 6 соток</dd></div>
             </dl>
-            <button class="button button-light js-open-contact">Получить планировки <span>↗</span></button>
+            <button class="button button-light js-open-contact"><span data-i18n="projects.request">Получить презентацию</span><span>↗</span></button>
           </div>
         </div>
-        <div class="project-tabs" role="tablist" aria-label="Выбор проекта">
+        <div class="project-tabs" role="tablist" aria-label="Projects">
           <button class="active" data-project="0"><span>01</span>A.01 Essential</button>
           <button data-project="1"><span>02</span>A.02 Family</button>
           <button data-project="2"><span>03</span>A.03 Courtyard</button>
@@ -95,74 +115,100 @@
       </section>
 
       <section class="system" id="system">
-        <div class="section-head dark-head">
-          <div><p class="section-kicker">Система A-House</p><h2>Сложное —<br /><em>внутри. Лёгкость — снаружи.</em></h2></div>
-          <p>Все ключевые узлы продуманы как доступные и заменяемые. Дом не прячет инженерные компромиссы за отделкой.</p>
+        <div class="section-head dark-head reveal">
+          <div><p class="section-kicker" data-i18n="system.kicker">Система A-House</p><h2 data-i18n-html="system.title">Технологии, которые<br /><em>не требуют внимания.</em></h2></div>
+          <p data-i18n="system.intro">Дом сам поддерживает комфорт, производит энергию и сообщает о состоянии систем. Все важные узлы остаются доступными для обслуживания.</p>
         </div>
-        <div class="system-layout">
-          <div class="system-diagram" aria-label="Схема слоёв дома">
-            <div class="layer layer-roof"><span>01</span><b>Энергия</b><small>PV-надстройка и солнечная станция</small></div>
-            <div class="layer layer-space"><span>02</span><b>Сервис</b><small>Тёплое подкрышное пространство</small></div>
-            <div class="layer layer-life"><span>03</span><b>Жизнь</b><small>Свободный жилой объём без несущих стоек</small></div>
-            <div class="layer layer-tech"><span>04</span><b>Основа</b><small>Закрытый обслуживаемый техэтаж</small></div>
+        <div class="system-layout reveal">
+          <div class="energy-panel">
+            <div class="energy-top"><span data-i18n="system.profile">Энергетический профиль</span><span class="live-dot" data-i18n="system.live">Система активна</span></div>
+            <div class="energy-orbit"><div><strong>74%</strong><span data-i18n="system.autonomy">автономность</span></div></div>
+            <div class="energy-stats">
+              <div><span data-i18n="system.generation">Генерация</span><b>38.4 kWh</b><i style="--level:76%"></i></div>
+              <div><span data-i18n="system.consumption">Потребление</span><b>14.8 kWh</b><i style="--level:42%"></i></div>
+              <div><span data-i18n="system.storage">Накопитель</span><b>82%</b><i style="--level:82%"></i></div>
+            </div>
+            <small data-i18n="system.demo">Иллюстрация суточного энергобаланса</small>
           </div>
           <div class="feature-list">
-            <article><span>01</span><div><h3>Тёплый контур</h3><p>SIP MgO–PIR–MgO, окна с терморазрывом и контроль каждого узла — без мостиков холода.</p></div></article>
-            <article><span>02</span><div><h3>Климат без сквозняков</h3><p>Тёплый пол, холодный потолок, рекуперация и контроль точки росы работают как одна система.</p></div></article>
-            <article><span>03</span><div><h3>Энергия дома</h3><p>Солнечная станция, аккумуляторы, тепловой насос и резервный контур создают устойчивый энергобаланс.</p></div></article>
-            <article><span>04</span><div><h3>Ремонт без ремонта</h3><p>Инженерные трассы доступны для осмотра и локальной замены без демонтажа жилых помещений.</p></div></article>
+            <article><span>01</span><div><h3 data-i18n="system.f1t">Непрерывный тёплый контур</h3><p data-i18n="system.f1p">SIP MgO–PIR–MgO, окна с терморазрывом и герметичный монтаж минимизируют теплопотери.</p></div></article>
+            <article><span>02</span><div><h3 data-i18n="system.f2t">Климат без сквозняков</h3><p data-i18n="system.f2p">Тёплый пол, холодный потолок, рекуперация и контроль влажности работают как единое целое.</p></div></article>
+            <article><span>03</span><div><h3 data-i18n="system.f3t">Энергия и резерв</h3><p data-i18n="system.f3p">Солнечная станция, аккумуляторы, тепловой насос и резервный контур повышают устойчивость дома.</p></div></article>
+            <article><span>04</span><div><h3 data-i18n="system.f4t">Ремонт без разрушений</h3><p data-i18n="system.f4p">Трассы проходят через техэтаж и подкрышное пространство — к ним можно добраться без демонтажа интерьера.</p></div></article>
           </div>
         </div>
       </section>
 
-      <section class="comfort">
-        <div class="comfort-title"><p class="section-kicker light">Невидимый комфорт</p><h2>Дом заботится.<br /><em>Вы просто живёте.</em></h2></div>
-        <div class="comfort-cards">
-          <article><span class="icon">☼</span><h3>Сам производит энергию</h3><p>Солнечная кровля превращает площадь дома в личный энергетический ресурс.</p><b>01</b></article>
-          <article><span class="icon">≈</span><h3>Держит идеальный климат</h3><p>Тишина, свежий воздух, мягкое тепло и прохлада — без резких перепадов.</p><b>02</b></article>
-          <article><span class="icon">↔</span><h3>Меняется вместе с вами</h3><p>Модульные перегородки позволяют обновлять сценарии комнат без большой стройки.</p><b>03</b></article>
-          <article><span class="icon">◇</span><h3>Сохраняет свою ценность</h3><p>Ремонтопригодный фасад и доступная инженерия продлевают жизнь каждому элементу.</p><b>04</b></article>
+      <section class="included" id="included">
+        <div class="included-title reveal"><p class="section-kicker" data-i18n="included.kicker">В основе каждого проекта</p><h2 data-i18n-html="included.title">Не набор опций.<br /><em>Цельная экосистема.</em></h2></div>
+        <div class="included-grid reveal">
+          <article><span>01</span><h3 data-i18n="included.i1t">Архитектура</h3><p data-i18n="included.i1p">Адаптация посадки, фасада и планировки к участку и сценарию семьи.</p><small>ARCH</small></article>
+          <article><span>02</span><h3 data-i18n="included.i2t">Конструктив</h3><p data-i18n="included.i2p">Модуль 1220 мм, заводская точность и быстрый контролируемый монтаж.</p><small>CORE</small></article>
+          <article><span>03</span><h3 data-i18n="included.i3t">Инженерия</h3><p data-i18n="included.i3p">От климата и водоподготовки до зарядки автомобиля и резервного питания.</p><small>TECH</small></article>
+          <article><span>04</span><h3 data-i18n="included.i4t">Энергия</h3><p data-i18n="included.i4p">Расчёт солнечной станции, накопителей и интеллектуального управления нагрузками.</p><small>POWER</small></article>
+          <article><span>05</span><h3 data-i18n="included.i5t">Участок</h3><p data-i18n="included.i5p">Навес, дорожки, освещение, дренаж и ландшафт как продолжение дома.</p><small>LAND</small></article>
+          <article><span>06</span><h3 data-i18n="included.i6t">Сервис</h3><p data-i18n="included.i6p">Документация узлов, маркировка систем и понятный регламент обслуживания.</p><small>CARE</small></article>
+        </div>
+      </section>
+
+      <section class="story">
+        <div class="story-image parallax-media"><img src="images/a-house-custom.webp" alt="A-House in forest" /></div>
+        <div class="story-copy reveal">
+          <p class="section-kicker light" data-i18n="story.kicker">Дом и ландшафт</p>
+          <h2 data-i18n-html="story.title">Каждый участок<br /><em>подсказывает решение.</em></h2>
+          <p data-i18n="story.text">Рельеф, солнце, ветер и виды становятся частью архитектуры. Дом может раскрыться к саду, защитить внутренний двор или шагнуть по склону, сохраняя деревья.</p>
+          <div class="story-note"><span>01</span><p data-i18n="story.note">Сначала мы читаем место. Только потом рисуем стены.</p></div>
         </div>
       </section>
 
       <section class="process" id="process">
-        <div class="process-intro"><p class="section-kicker">Как мы работаем</p><h2>От вашего сценария —<br /><em>к точной архитектуре.</em></h2></div>
-        <ol>
-          <li><span>01</span><div><h3>Знакомимся</h3><p>Обсуждаем образ жизни, участок, бюджет и приоритеты.</p></div></li>
-          <li><span>02</span><div><h3>Выбираем основу</h3><p>Берём готовую конфигурацию или начинаем индивидуальную.</p></div></li>
-          <li><span>03</span><div><h3>Адаптируем</h3><p>Настраиваем архитектуру, планировку и энергосценарий.</p></div></li>
-          <li><span>04</span><div><h3>Собираем дом</h3><p>Производим повторяемые модули и монтируем их на участке.</p></div></li>
+        <div class="process-intro reveal"><p class="section-kicker" data-i18n="process.kicker">Маршрут проекта</p><h2 data-i18n-html="process.title">От первой встречи —<br /><em>до первого утра дома.</em></h2></div>
+        <ol class="reveal">
+          <li><span>01</span><div><h3 data-i18n="process.s1t">Сценарий</h3><p data-i18n="process.s1p">Изучаем состав семьи, привычки, участок, бюджет и планы на будущее.</p></div></li>
+          <li><span>02</span><div><h3 data-i18n="process.s2t">Концепция</h3><p data-i18n="process.s2p">Выбираем основу и создаём архитектурный, планировочный и энергетический сценарий.</p></div></li>
+          <li><span>03</span><div><h3 data-i18n="process.s3t">Проект</h3><p data-i18n="process.s3p">Фиксируем конструктив, инженерию, материалы, узлы и контроль качества.</p></div></li>
+          <li><span>04</span><div><h3 data-i18n="process.s4t">Реализация</h3><p data-i18n="process.s4p">Производим модули, готовим участок, собираем и запускаем системы дома.</p></div></li>
         </ol>
+      </section>
+
+      <section class="faq">
+        <div class="faq-intro reveal"><p class="section-kicker" data-i18n="faq.kicker">Коротко о важном</p><h2 data-i18n-html="faq.title">Вопросы,<br /><em>которые стоит задать.</em></h2></div>
+        <div class="faq-list reveal">
+          <details><summary><span data-i18n="faq.q1">Можно ли изменить готовый проект?</span><b>+</b></summary><p data-i18n="faq.a1">Да. Готовая конфигурация — это проверенная основа. Мы адаптируем планировку, фасад, ориентацию, инженерный состав и связь с участком.</p></details>
+          <details><summary><span data-i18n="faq.q2">Насколько дом автономен?</span><b>+</b></summary><p data-i18n="faq.a2">Уровень автономности рассчитывается для конкретного климата и сценария потребления. Солнечная станция, накопители и резервные источники подбираются как единая система.</p></details>
+          <details><summary><span data-i18n="faq.q3">Что происходит с инженерией через 10–15 лет?</span><b>+</b></summary><p data-i18n="faq.a3">Ключевые трассы и оборудование доступны для диагностики и замены. Скрытые необслуживаемые узлы принципиально не используются.</p></details>
+          <details><summary><span data-i18n="faq.q4">Подойдёт ли A-House для сложного участка?</span><b>+</b></summary><p data-i18n="faq.a4">Да. Тип фундамента, посадка и конфигурация дома уточняются после геологии, топосъёмки и анализа рельефа.</p></details>
+        </div>
       </section>
 
       <section class="final-cta">
         <div class="cta-label">A—HOUSE / YOUR SCENARIO</div>
-        <h2>Начнём с вопроса:<br /><em>как вы хотите жить?</em></h2>
-        <p>Расскажите о будущем доме. Мы предложим подходящую конфигурацию и первые шаги проекта.</p>
-        <button class="round-button js-open-contact" aria-label="Обсудить свой A-House">Обсудить<br />свой A-House <span>↗</span></button>
+        <h2 data-i18n-html="cta.title">Начнём с вопроса:<br /><em>как вы хотите жить?</em></h2>
+        <p data-i18n="cta.text">Расскажите о будущем доме. Мы предложим подходящую конфигурацию и обозначим первые шаги проекта.</p>
+        <button class="round-button js-open-contact"><span data-i18n-html="cta.button">Обсудить<br />свой A-House</span><i>↗</i></button>
       </section>
     </main>
 
     <footer>
       <a class="brand footer-brand" href="#top"><span class="brand-mark">A</span><span>A—HOUSE</span></a>
-      <p>Архитектурная система<br />для частной жизни.</p>
-      <div class="footer-links"><a href="#projects">Проекты</a><a href="#system">Технологии</a><a href="#process">Процесс</a></div>
-      <div class="footer-meta"><span>© 2026 A-House</span><a href="#top">Наверх ↑</a></div>
+      <p data-i18n-html="footer.tagline">Архитектурная система<br />для частной жизни.</p>
+      <div class="footer-links"><a href="#projects" data-i18n="nav.projects">Проекты</a><a href="#system" data-i18n="nav.system">Система</a><a href="#included" data-i18n="nav.included">Комплектация</a><a href="#process" data-i18n="nav.process">Процесс</a></div>
+      <div class="footer-meta"><span>© 2026 A-House</span><a href="#top"><span data-i18n="footer.top">Наверх</span> ↑</a></div>
     </footer>
 
     <dialog class="contact-dialog">
-      <button class="dialog-close" aria-label="Закрыть">×</button>
-      <p class="section-kicker">Ваш A-House</p>
-      <h2>Расскажите<br /><em>о будущем доме.</em></h2>
+      <button class="dialog-close" aria-label="Close">×</button>
+      <p class="section-kicker" data-i18n="form.kicker">Ваш A-House</p>
+      <h2 data-i18n-html="form.title">Расскажите<br /><em>о будущем доме.</em></h2>
       <form>
-        <label>Как к вам обращаться?<input name="name" required placeholder="Имя" /></label>
-        <label>Как с вами связаться?<input name="contact" required placeholder="Телефон или e-mail" /></label>
-        <label>Что для вас важно?<textarea name="message" rows="3" placeholder="Участок, состав семьи, пожелания"></textarea></label>
-        <button class="button button-dark" type="submit">Отправить запрос <span>↗</span></button>
-        <small>Нажимая кнопку, вы соглашаетесь на обработку данных.</small>
+        <label><span data-i18n="form.name">Как к вам обращаться?</span><input name="name" required data-i18n-placeholder="form.namePh" placeholder="Имя" /></label>
+        <label><span data-i18n="form.contact">Как с вами связаться?</span><input name="contact" required data-i18n-placeholder="form.contactPh" placeholder="Телефон или e-mail" /></label>
+        <label><span data-i18n="form.message">Что для вас важно?</span><textarea name="message" rows="3" data-i18n-placeholder="form.messagePh" placeholder="Участок, состав семьи, пожелания"></textarea></label>
+        <button class="button button-dark" type="submit"><span data-i18n="form.send">Отправить запрос</span><span>↗</span></button>
+        <small data-i18n="form.policy">Нажимая кнопку, вы соглашаетесь на обработку данных.</small>
       </form>
-      <div class="form-success" hidden><span>✓</span><h3>Спасибо.</h3><p>Запрос сохранён. Мы свяжемся с вами, чтобы обсудить детали.</p></div>
+      <div class="form-success" hidden><span>✓</span><h3 data-i18n="form.thanks">Спасибо.</h3><p data-i18n="form.success">Запрос сохранён. Мы свяжемся с вами, чтобы обсудить детали.</p></div>
     </dialog>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
