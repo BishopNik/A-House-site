@@ -22,6 +22,7 @@
         <a href="#system" data-i18n="nav.system">Система</a>
         <a href="#included" data-i18n="nav.included">Комплектация</a>
         <a href="#process" data-i18n="nav.process">Процесс</a>
+        <a href="#contact" data-i18n="nav.estimate">Расчёт</a>
       </nav>
       <div class="header-tools">
         <div class="language-switcher" aria-label="Language">
@@ -231,6 +232,41 @@
         </div>
       </section>
 
+      <section class="contact-section" id="contact">
+        <div class="contact-intro reveal">
+          <p class="section-kicker light" data-i18n="estimate.kicker">Расчёт и консультация</p>
+          <h2 data-i18n-html="estimate.title">Расскажите о доме.<br /><em>Мы начнём с главного.</em></h2>
+          <p data-i18n="estimate.text">Можно обратиться без готового технического задания. Опишите участок, состав семьи и ожидания — мы уточним детали и предложим подходящий формат проекта.</p>
+          <div class="contact-points">
+            <div><span>01</span><p data-i18n="estimate.p1">Подберём подходящую конфигурацию A-House</p></div>
+            <div><span>02</span><p data-i18n="estimate.p2">Обсудим индивидуальные изменения и инженерию</p></div>
+            <div><span>03</span><p data-i18n="estimate.p3">Подготовим следующие шаги и предварительную оценку</p></div>
+          </div>
+        </div>
+        <div class="estimate-card reveal">
+          <div class="estimate-card-head"><span>A—HOUSE / REQUEST</span><i data-i18n="estimate.note">Без обязательств</i></div>
+          <form class="estimate-form">
+            <div class="form-row">
+              <label><span data-i18n="estimate.name">Ваше имя</span><input name="name" required data-i18n-placeholder="estimate.namePh" placeholder="Как к вам обращаться?" /></label>
+              <label><span data-i18n="estimate.contact">Телефон или e-mail</span><input name="contact" required data-i18n-placeholder="estimate.contactPh" placeholder="Удобный способ связи" /></label>
+            </div>
+            <label><span data-i18n="estimate.project">Какой проект вас интересует?</span>
+              <select name="project">
+                <option value="essential" data-i18n="estimate.o1">A.01 Essential</option>
+                <option value="family" data-i18n="estimate.o2">A.02 Family</option>
+                <option value="courtyard" data-i18n="estimate.o3">A.03 Courtyard</option>
+                <option value="custom" data-i18n="estimate.o4">Индивидуальный A.Custom</option>
+                <option value="unsure" data-i18n="estimate.o5">Пока не определился</option>
+              </select>
+            </label>
+            <label><span data-i18n="estimate.message">Расскажите немного о будущем доме</span><textarea name="message" rows="4" data-i18n-placeholder="estimate.messagePh" placeholder="Участок, площадь, состав семьи, важные пожелания"></textarea></label>
+            <label class="consent"><input type="checkbox" required /><span data-i18n="estimate.consent">Я согласен на обработку данных для связи по моему запросу</span></label>
+            <button class="button estimate-submit" type="submit"><span data-i18n="estimate.send">Запросить предварительный расчёт</span><span>↗</span></button>
+          </form>
+          <div class="estimate-success" hidden><span>✓</span><h3 data-i18n="estimate.thanks">Спасибо за запрос.</h3><p data-i18n="estimate.success">Мы получили информацию и свяжемся с вами, чтобы спокойно обсудить будущий дом.</p></div>
+        </div>
+      </section>
+
       <section class="final-cta">
         <div class="cta-label">A—HOUSE / YOUR SCENARIO</div>
         <h2 data-i18n-html="cta.title">Начнём с вопроса:<br /><em>как вы хотите жить?</em></h2>
@@ -242,7 +278,7 @@
     <footer>
       <a class="brand footer-brand" href="#top"><span class="brand-mark">A</span><span>A—HOUSE</span></a>
       <p data-i18n-html="footer.tagline">Архитектурная система<br />для частной жизни.</p>
-      <div class="footer-links"><a href="#projects" data-i18n="nav.projects">Проекты</a><a href="#system" data-i18n="nav.system">Система</a><a href="#included" data-i18n="nav.included">Комплектация</a><a href="#process" data-i18n="nav.process">Процесс</a></div>
+      <div class="footer-links"><a href="#projects" data-i18n="nav.projects">Проекты</a><a href="#system" data-i18n="nav.system">Система</a><a href="#included" data-i18n="nav.included">Комплектация</a><a href="#process" data-i18n="nav.process">Процесс</a><a href="#contact" data-i18n="nav.estimate">Расчёт</a></div>
       <div class="footer-meta"><span>© 2026 A-House</span><a href="#top"><span data-i18n="footer.top">Наверх</span> ↑</a></div>
     </footer>
 
