@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div id="top" class="page-top-anchor" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
 
-    <header class="header" id="top">
+    <header class="header">
       <a class="brand" href="#top" aria-label="A-House">
         <span class="brand-mark">A</span><span>A—HOUSE</span>
       </a>
@@ -35,8 +36,9 @@
       <section class="hero">
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow"><span data-i18n="hero.eyebrow">Архитектурная система нового поколения</span><span>01 / 08</span></p>
+          <p class="eyebrow"><span data-i18n="hero.eyebrow">Архитектурная система нового поколения</span><span data-i18n="hero.edition">PRIVATE LIVING / 2026</span></p>
           <h1 data-i18n-html="hero.title">Дом — это не объект.<br />Это <em>ваш сценарий.</em></h1>
+          <p class="brand-slogan" data-i18n="hero.slogan">A-House. Дом, настроенный на вас.</p>
           <p class="hero-lead" data-i18n="hero.lead">A-House соединяет архитектуру, автономную энергетику и свободную планировку в одной точной системе. Вы выбираете образ жизни — мы собираем дом вокруг него.</p>
           <div class="hero-actions">
             <a class="button button-dark magnetic" href="#projects"><span data-i18n="hero.explore">Исследовать проекты</span><span>↓</span></a>
@@ -106,11 +108,15 @@
             <button class="button button-light js-open-contact"><span data-i18n="projects.request">Получить презентацию</span><span>↗</span></button>
           </div>
         </div>
-        <div class="project-tabs" role="tablist" aria-label="Projects">
-          <button class="active" data-project="0"><span>01</span>A.01 Essential</button>
-          <button data-project="1"><span>02</span>A.02 Family</button>
-          <button data-project="2"><span>03</span>A.03 Courtyard</button>
-          <button data-project="3"><span>04</span>A.Custom</button>
+        <div class="project-picker-hint reveal">
+          <span class="project-picker-pulse">↘</span>
+          <div><strong data-i18n="projects.choose">Выберите вариант дома</strong><small data-i18n="projects.chooseHint">Нажмите на карточку — изображение и характеристики изменятся</small></div>
+        </div>
+        <div class="project-tabs reveal" role="tablist" aria-label="Projects">
+          <button class="active" data-project="0"><span>01</span><strong>A.01 Essential</strong><small data-i18n="projects.view">Смотреть вариант</small><i>↗</i></button>
+          <button data-project="1"><span>02</span><strong>A.02 Family</strong><small data-i18n="projects.view">Смотреть вариант</small><i>↗</i></button>
+          <button data-project="2"><span>03</span><strong>A.03 Courtyard</strong><small data-i18n="projects.view">Смотреть вариант</small><i>↗</i></button>
+          <button data-project="3"><span>04</span><strong>A.Custom</strong><small data-i18n="projects.view">Смотреть вариант</small><i>↗</i></button>
         </div>
       </section>
 
@@ -135,7 +141,31 @@
             <article><span>02</span><div><h3 data-i18n="system.f2t">Климат без сквозняков</h3><p data-i18n="system.f2p">Тёплый пол, холодный потолок, рекуперация и контроль влажности работают как единое целое.</p></div></article>
             <article><span>03</span><div><h3 data-i18n="system.f3t">Энергия и резерв</h3><p data-i18n="system.f3p">Солнечная станция, аккумуляторы, тепловой насос и резервный контур повышают устойчивость дома.</p></div></article>
             <article><span>04</span><div><h3 data-i18n="system.f4t">Ремонт без разрушений</h3><p data-i18n="system.f4p">Трассы проходят через техэтаж и подкрышное пространство — к ним можно добраться без демонтажа интерьера.</p></div></article>
+            <article><span>05</span><div><h3 data-i18n="system.f5t">Чистая вода по всему дому</h3><p data-i18n="system.f5p">Буферная ёмкость, фильтрация, контроль давления и отдельная питьевая подготовка работают автоматически.</p></div></article>
+            <article><span>06</span><div><h3 data-i18n="system.f6t">Снеготаяние и защита участка</h3><p data-i18n="system.f6p">Кровля, солнечные панели, дорожки и отмостка могут оснащаться управляемыми контурами снеготаяния.</p></div></article>
           </div>
+        </div>
+      </section>
+
+      <section class="safety" id="safety">
+        <div class="safety-heading reveal">
+          <p class="section-kicker" data-i18n="safety.kicker">Безопасность по умолчанию</p>
+          <h2 data-i18n-html="safety.title">Дом замечает проблему<br /><em>раньше вас.</em></h2>
+          <p data-i18n="safety.intro">Критические системы работают постоянно, уведомляют владельца и по возможности автоматически перекрывают источник риска.</p>
+        </div>
+        <div class="safety-grid reveal">
+          <article><div class="system-icon water-icon">◌</div><span>01</span><h3 data-i18n="safety.s1t">Защита от протечек</h3><p data-i18n="safety.s1p">Датчики в мокрых зонах, автоматическое перекрытие воды и мгновенное уведомление.</p><b data-i18n="safety.active">24/7 активно</b></article>
+          <article><div class="system-icon co-icon">CO</div><span>02</span><h3 data-i18n="safety.s2t">Контроль CO и дыма</h3><p data-i18n="safety.s2p">Датчики угарного газа, дыма и температуры связаны с вентиляцией и тревожными сценариями.</p><b data-i18n="safety.active">24/7 активно</b></article>
+          <article><div class="system-icon shield-icon">◇</div><span>03</span><h3 data-i18n="safety.s3t">Охрана дома и периметра</h3><p data-i18n="safety.s3p">Проводная сигнализация, контроль дверей, окон, ворот и ключевых зон участка.</p><b data-i18n="safety.active">24/7 активно</b></article>
+          <article><div class="system-icon camera-icon">◎</div><span>04</span><h3 data-i18n="safety.s4t">Видеонаблюдение</h3><p data-i18n="safety.s4p">Камеры без слепых зон, ночной режим, защищённое хранение и удалённый доступ.</p><b data-i18n="safety.active">24/7 активно</b></article>
+          <article><div class="system-icon bolt-icon">ϟ</div><span>05</span><h3 data-i18n="safety.s5t">Электрозащита</h3><p data-i18n="safety.s5p">Заземление, молниезащита, контроль нагрузки и резервное питание критических устройств.</p><b data-i18n="safety.active">24/7 активно</b></article>
+          <article class="smart-card"><div class="system-icon smart-icon">⌁</div><span>06</span><h3 data-i18n="safety.s6t">Умный дом — по желанию</h3><p data-i18n="safety.s6p">Единый интерфейс для тепла, электричества, воды, света, климата, безопасности и других контроллеров.</p><b data-i18n="safety.optional">Опционально</b></article>
+        </div>
+        <div class="control-strip reveal">
+          <div><span class="live-dot" data-i18n="safety.online">Дом на связи</span><strong>21.5°C</strong><small data-i18n="safety.climate">Климат</small></div>
+          <div><span>H₂O</span><strong data-i18n="safety.closed">Закрыто</strong><small data-i18n="safety.water">Защита воды</small></div>
+          <div><span>CO</span><strong>0 ppm</strong><small data-i18n="safety.air">Воздух</small></div>
+          <div><span>CCTV</span><strong>8 / 8</strong><small data-i18n="safety.cameras">Камеры онлайн</small></div>
         </div>
       </section>
 
@@ -161,6 +191,22 @@
         </div>
       </section>
 
+      <section class="hospitality">
+        <div class="coffee-scene reveal" aria-hidden="true">
+          <div class="coffee-steam"><i></i><i></i><i></i></div>
+          <div class="coffee-cup"><span></span></div>
+          <div class="chocolate"><i></i><i></i><i></i><i></i></div>
+          <small>A—HOUSE / FIRST CONVERSATION</small>
+        </div>
+        <div class="hospitality-copy reveal">
+          <p class="section-kicker" data-i18n="hospitality.kicker">Индивидуальный подход</p>
+          <h2 data-i18n-html="hospitality.title">Хороший дом начинается<br /><em>не с чертежа.</em></h2>
+          <p class="hospitality-lead" data-i18n="hospitality.lead">Он начинается с чашки хорошего кофе, кусочка шоколада и спокойного разговора о том, как вы действительно хотите жить.</p>
+          <p data-i18n="hospitality.text">Мы не подгоняем семью под проект. Слушаем, задаём вопросы, изучаем участок и создаём личный сценарий — от утреннего света в спальне до того, где будет ждать вас любимая книга.</p>
+          <button class="text-link js-open-contact"><span data-i18n="hospitality.button">Встретиться за кофе</span><span>↗</span></button>
+        </div>
+      </section>
+
       <section class="process" id="process">
         <div class="process-intro reveal"><p class="section-kicker" data-i18n="process.kicker">Маршрут проекта</p><h2 data-i18n-html="process.title">От первой встречи —<br /><em>до первого утра дома.</em></h2></div>
         <ol class="reveal">
@@ -178,6 +224,10 @@
           <details><summary><span data-i18n="faq.q2">Насколько дом автономен?</span><b>+</b></summary><p data-i18n="faq.a2">Уровень автономности рассчитывается для конкретного климата и сценария потребления. Солнечная станция, накопители и резервные источники подбираются как единая система.</p></details>
           <details><summary><span data-i18n="faq.q3">Что происходит с инженерией через 10–15 лет?</span><b>+</b></summary><p data-i18n="faq.a3">Ключевые трассы и оборудование доступны для диагностики и замены. Скрытые необслуживаемые узлы принципиально не используются.</p></details>
           <details><summary><span data-i18n="faq.q4">Подойдёт ли A-House для сложного участка?</span><b>+</b></summary><p data-i18n="faq.a4">Да. Тип фундамента, посадка и конфигурация дома уточняются после геологии, топосъёмки и анализа рельефа.</p></details>
+          <details><summary><span data-i18n="faq.q5">Какие системы безопасности входят в дом?</span><b>+</b></summary><p data-i18n="faq.a5">В базовый инженерный сценарий закладываются защита от протечек, контроль дыма и угарного газа, сигнализация, видеонаблюдение и резервное питание критических узлов. Точный состав согласуется с клиентом.</p></details>
+          <details><summary><span data-i18n="faq.q6">Обязательно ли устанавливать умный дом?</span><b>+</b></summary><p data-i18n="faq.a6">Нет. Автоматика критических систем работает самостоятельно. Единый интерфейс умного дома добавляется по желанию клиента и объединяет нужные контроллеры.</p></details>
+          <details><summary><span data-i18n="faq.q7">Что будет при отключении электричества или интернета?</span><b>+</b></summary><p data-i18n="faq.a7">Критические функции имеют локальное управление и резервное питание. Дом не должен зависеть от облака для базового тепла, воды и безопасности.</p></details>
+          <details><summary><span data-i18n="faq.q8">Как формируется стоимость проекта?</span><b>+</b></summary><p data-i18n="faq.a8">После первой встречи мы фиксируем площадь, участок, архитектурный сценарий и набор инженерии. Затем формируем прозрачную этапную оценку без скрытых опций.</p></details>
         </div>
       </section>
 
