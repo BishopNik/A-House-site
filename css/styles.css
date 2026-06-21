@@ -72,3 +72,23 @@ main>section{scroll-margin-top:81px;position:relative}
 
 @media(max-width:1050px){.contact-section{grid-template-columns:1fr}.contact-intro h2{margin-top:40px}.estimate-card{max-width:760px}}
 @media(max-width:650px){.contact-section{padding:85px 20px}.contact-intro h2{font-size:46px}.estimate-card{margin:0 -6px;padding:25px 20px}.estimate-form .form-row{grid-template-columns:1fr}.estimate-success{min-height:420px;padding:50px 5px}}
+
+/* Form readability */
+.estimate-card-head{font-size:11px;line-height:1.4}
+.estimate-form{gap:28px}
+.estimate-form label{font-size:13px;line-height:1.4;letter-spacing:.08em}
+.estimate-form input:not([type="checkbox"]),.estimate-form textarea,.estimate-form select{font-size:16px;line-height:1.5;padding:14px 0}
+.estimate-form input::placeholder,.estimate-form textarea::placeholder{color:#8a8077;opacity:1}
+.estimate-form .consent{font-size:12px;line-height:1.55}
+.estimate-form .consent input{width:18px;height:18px;flex:0 0 18px}
+.estimate-submit{min-height:58px;font-size:13px}
+.contact-points p{font-size:13px;line-height:1.55}
+
+.contact-dialog label{font-size:13px;line-height:1.4;letter-spacing:.08em}
+.contact-dialog input,.contact-dialog textarea{font-size:16px;line-height:1.5;padding:14px 0}
+.contact-dialog input::placeholder,.contact-dialog textarea::placeholder{color:#8a8077;opacity:1}
+.contact-dialog form .button{min-height:58px;font-size:13px}
+.contact-dialog small{font-size:12px;line-height:1.5}
+.form-success p,.estimate-success p{font-size:16px}
+
+@media(max-width:1350px){.estimate-form label,.contact-dialog label{font-size:13px}.estimate-form input:not([type="checkbox"]),.estimate-form textarea,.estimate-form select,.contact-dialog input,.contact-dialog textarea{font-size:17px}.estimate-submit,.contact-dialog form .button{font-size:14px}}
