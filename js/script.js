@@ -878,18 +878,44 @@ document.querySelector('.dialog-close').addEventListener('click', () => dialog.c
 dialog.addEventListener('click', e => {
 	if (e.target === dialog) dialog.close();
 });
-dialog.querySelector('form').addEventListener('submit', e => {
-	e.preventDefault();
-	e.currentTarget.hidden = true;
-	dialog.querySelector('.form-success').hidden = false;
+dialog.querySelector('form').addEventListener('submit', event => {
+	submitContactForm(event, dialog.querySelector('.form-success'));
 });
 
 const estimateForm = document.querySelector('.estimate-form');
-estimateForm.addEventListener('submit', e => {
-	e.preventDefault();
-	e.currentTarget.hidden = true;
-	document.querySelector('.estimate-success').hidden = false;
+estimateForm.addEventListener('submit', event => {
+	submitContactForm(event, document.querySelector('.estimate-success'));
 });
+
+async function submitContactForm(event, success) {
+	event.preventDefault();
+	const form = event.currentTarget;
+	const button = form.querySelector('button[type="submit"]');
+	const status = form.querySelector('.contact-form-status');
+	status.textContent = '';
+	button.disabled = true;
+	try {
+		const apiOrigin = document.querySelector('meta[name="contact-api-origin"]')?.content.replace(/\/$/, '');
+		if (!apiOrigin) throw new Error('Contact API origin is not configured');
+		const response = await fetch(`${apiOrigin}/api/contact/a-house`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(Object.fromEntries(new FormData(form))),
+		});
+		if (!response.ok) throw new Error('Request failed');
+		form.reset();
+		form.hidden = true;
+		success.hidden = false;
+	} catch (error) {
+		status.textContent = language === 'de'
+			? 'Die Anfrage konnte nicht gesendet werden. Bitte nutzen Sie Telefon oder Telegram.'
+			: language === 'en'
+				? 'Could not send the request. Please use phone or Telegram.'
+				: 'Не удалось отправить запрос. Используйте телефон или Telegram.';
+	} finally {
+		button.disabled = false;
+	}
+}
 
 const revealObserver = new IntersectionObserver(
 	entries =>
