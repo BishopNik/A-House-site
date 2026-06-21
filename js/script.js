@@ -126,7 +126,7 @@ const translations = {
 		hospitality: {
 			kicker: 'Индивидуальный подход',
 			title: 'Хороший дом начинается<br><em>не с чертежа.</em>',
-			lead: 'Он начинается с чашки хорошего кофе, кусочка шоколада и спокойного разговора о том, как вы действительно хотите жить.',
+			lead: 'Он начинается с чашки кофе и спокойного разговора о том, как вы действительно хотите жить.',
 			text: 'Мы не подгоняем семью под проект. Слушаем, задаём вопросы, изучаем участок и создаём личный сценарий — от утреннего света в спальне до того, где будет ждать вас любимая книга.',
 			button: 'Встретиться за кофе',
 		},
@@ -334,7 +334,7 @@ const translations = {
 		hospitality: {
 			kicker: 'A personal approach',
 			title: 'A good home begins<br><em>before the drawings.</em>',
-			lead: 'It begins with a cup of good coffee, a piece of chocolate and an unhurried conversation about how you truly want to live.',
+			lead: 'It begins with a cup of coffee and an unhurried conversation about how you truly want to live.',
 			text: 'We do not fit a family into a template. We listen, ask questions, study the site and create a personal scenario — from morning light in the bedroom to the place where your favourite book will wait.',
 			button: 'Meet over coffee',
 		},
@@ -542,7 +542,7 @@ const translations = {
 		hospitality: {
 			kicker: 'Persönlicher Ansatz',
 			title: 'Ein gutes Haus beginnt<br><em>nicht mit der Zeichnung.</em>',
-			lead: 'Es beginnt mit einer guten Tasse Kaffee, einem Stück Schokolade und einem ruhigen Gespräch darüber, wie Sie wirklich leben möchten.',
+			lead: 'Es beginnt mit einer Tasse Kaffee und einem ruhigen Gespräch darüber, wie Sie wirklich leben möchten.',
 			text: 'Wir pressen keine Familie in eine Vorlage. Wir hören zu, fragen nach, lesen das Grundstück und entwickeln ein persönliches Szenario — vom Morgenlicht im Schlafzimmer bis zum Platz für Ihr Lieblingsbuch.',
 			button: 'Bei Kaffee kennenlernen',
 		},
