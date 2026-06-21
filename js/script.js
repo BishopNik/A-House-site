@@ -871,15 +871,21 @@ menu.querySelectorAll('a').forEach(a =>
 );
 
 const dialog = document.querySelector('.contact-dialog');
+const dialogClose = dialog.querySelector('.dialog-close');
+const dialogForm = dialog.querySelector('form');
+const dialogSuccess = dialog.querySelector('.form-success');
+let dialogCloseTimeout;
+let dialogCloseFrame;
 document
 	.querySelectorAll('.js-open-contact')
 	.forEach(btn => btn.addEventListener('click', () => dialog.showModal()));
-document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+dialogClose.addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', e => {
 	if (e.target === dialog) dialog.close();
 });
-dialog.querySelector('form').addEventListener('submit', event => {
-	submitContactForm(event, dialog.querySelector('.form-success'));
+dialog.addEventListener('close', resetDialogSuccess);
+dialogForm.addEventListener('submit', event => {
+	submitContactForm(event, dialogSuccess);
 });
 
 const estimateForm = document.querySelector('.estimate-form');
@@ -904,8 +910,15 @@ async function submitContactForm(event, success) {
 		});
 		if (!response.ok) throw new Error('Request failed');
 		form.reset();
-		form.hidden = true;
-		success.hidden = false;
+		if (form === dialogForm) {
+			dialogForm.hidden = true;
+			dialogSuccess.hidden = false;
+			startDialogCloseCountdown();
+		} else {
+			const title = success.querySelector('h3')?.textContent || ({ ru: 'Спасибо', en: 'Thank you', de: 'Vielen Dank' })[language];
+			const message = success.querySelector('p')?.textContent || '';
+			window.submissionSuccess.show({ title, message });
+		}
 	} catch (error) {
 		status.textContent = language === 'de'
 			? 'Die Anfrage konnte nicht gesendet werden. Bitte nutzen Sie Telefon oder Telegram.'
@@ -915,6 +928,35 @@ async function submitContactForm(event, success) {
 	} finally {
 		button.disabled = false;
 	}
+}
+
+function startDialogCloseCountdown() {
+	clearDialogCloseCountdown();
+	dialogClose.classList.add('is-counting');
+	dialogClose.style.setProperty('--progress', 1);
+	const startedAt = performance.now();
+	const update = now => {
+		const remaining = Math.max(0, 1 - (now - startedAt) / 5000);
+		dialogClose.style.setProperty('--progress', remaining);
+		dialogClose.setAttribute('aria-label', `Close in ${Math.ceil(remaining * 5)} seconds`);
+		if (remaining > 0) dialogCloseFrame = requestAnimationFrame(update);
+	};
+	dialogCloseFrame = requestAnimationFrame(update);
+	dialogCloseTimeout = setTimeout(() => dialog.close(), 5000);
+}
+
+function clearDialogCloseCountdown() {
+	cancelAnimationFrame(dialogCloseFrame);
+	clearTimeout(dialogCloseTimeout);
+	dialogClose.classList.remove('is-counting');
+	dialogClose.style.removeProperty('--progress');
+	dialogClose.setAttribute('aria-label', 'Close');
+}
+
+function resetDialogSuccess() {
+	clearDialogCloseCountdown();
+	dialogForm.hidden = false;
+	dialogSuccess.hidden = true;
 }
 
 const revealObserver = new IntersectionObserver(
